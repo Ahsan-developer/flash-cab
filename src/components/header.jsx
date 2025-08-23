@@ -13,7 +13,7 @@ export default function Header() {
             </a>
             {/* <!-- Logo End --> */}
 
-            {/* <!-- Main Menu Start --> */}
+            {/* <!-- Main Menu Start -> */}
             <div class="collapse navbar-collapse main-menu">
               <div class="nav-menu-wrapper">
                 <ul class="navbar-nav mr-auto" id="menu">
