@@ -11,7 +11,7 @@ export const HeaderOld = () => {
       {/* <div class="preloader">
 		<div class="loading-container">
 			<div class="loading"></div>
-			<div id="loading-icon"><img src="/src/images/loader.svg" alt="" /></div>
+			<div id="loading-icon"><img src="/images/loader.svg" alt="" /></div>
 		</div>
 	</div> */}
       {/* <!-- Preloader End --> */}
@@ -23,7 +23,7 @@ export const HeaderOld = () => {
             <div class="container">
               {/* <!-- Logo Start --> */}
               <a class="navbar-brand" href="index.html">
-                {/* <img src="/src/images/logo.svg" alt="Logo" /> */}
+                {/* <img src="/images/logo.svg" alt="Logo" /> */}
                 <h1>Flash Cab</h1>
               </a>
               {/* <!-- Logo End --> */}
@@ -179,10 +179,7 @@ export const HeaderOld = () => {
                   <div class="luxury-collection-image" data-cursor-text="View">
                     <a href="#">
                       <figure>
-                        <img
-                          src="/src/images/luxury-collection-img-1.jpg"
-                          alt=""
-                        />
+                        <img src="/images/luxury-collection-img-1.jpg" alt="" />
                       </figure>
                     </a>
                   </div>
@@ -197,7 +194,7 @@ export const HeaderOld = () => {
                   {/* <!-- Luxury Collection Btn Start --> */}
                   <div class="luxury-collection-btn">
                     <a href="#" class="section-icon-btn">
-                      <img src="/src/images/arrow-white.svg" alt="" />
+                      <img src="/images/arrow-white.svg" alt="" />
                     </a>
                   </div>
                   {/* <!-- Luxury Collection Btn End --> */}
@@ -213,10 +210,7 @@ export const HeaderOld = () => {
                   <div class="luxury-collection-image" data-cursor-text="View">
                     <a href="#">
                       <figure>
-                        <img
-                          src="/src/images/luxury-collection-img-2.jpg"
-                          alt=""
-                        />
+                        <img src="/images/luxury-collection-img-2.jpg" alt="" />
                       </figure>
                     </a>
                   </div>
@@ -231,7 +225,7 @@ export const HeaderOld = () => {
                   {/* <!-- Luxury Collection Footer Start --> */}
                   <div class="luxury-collection-btn">
                     <a href="#" class="section-icon-btn">
-                      <img src="/src/images/arrow-white.svg" alt="" />
+                      <img src="/images/arrow-white.svg" alt="" />
                     </a>
                   </div>
                   {/* <!-- Luxury Collection Footer End --> */}
@@ -247,10 +241,7 @@ export const HeaderOld = () => {
                   <div class="luxury-collection-image" data-cursor-text="View">
                     <a href="#">
                       <figure>
-                        <img
-                          src="/src/images/luxury-collection-img-3.jpg"
-                          alt=""
-                        />
+                        <img src="/images/luxury-collection-img-3.jpg" alt="" />
                       </figure>
                     </a>
                   </div>
@@ -265,7 +256,7 @@ export const HeaderOld = () => {
                   {/* <!-- Luxury Collection Footer Start --> */}
                   <div class="luxury-collection-btn">
                     <a href="#" class="section-icon-btn">
-                      <img src="/src/images/arrow-white.svg" alt="" />
+                      <img src="/images/arrow-white.svg" alt="" />
                     </a>
                   </div>
                   {/* <!-- Luxury Collection Footer End --> */}
@@ -281,10 +272,7 @@ export const HeaderOld = () => {
                   <div class="luxury-collection-image" data-cursor-text="View">
                     <a href="#">
                       <figure>
-                        <img
-                          src="/src/images/luxury-collection-img-4.jpg"
-                          alt=""
-                        />
+                        <img src="/images/luxury-collection-img-4.jpg" alt="" />
                       </figure>
                     </a>
                   </div>
@@ -299,7 +287,7 @@ export const HeaderOld = () => {
                   {/* <!-- Luxury Collection Footer Start --> */}
                   <div class="luxury-collection-btn">
                     <a href="#" class="section-icon-btn">
-                      <img src="/src/images/arrow-white.svg" alt="" />
+                      <img src="/images/arrow-white.svg" alt="" />
                     </a>
                   </div>
                   {/* <!-- Luxury Collection Footer End --> */}
@@ -341,7 +329,7 @@ export const HeaderOld = () => {
                     data-wow-delay="0.5s"
                   >
                     <div class="icon-box">
-                      <img src="/src/images/icon-how-it-work-1.svg" alt="" />
+                      <img src="/images/icon-how-it-work-1.svg" alt="" />
                     </div>
                     <h2 class="accordion-header" id="workheading1">
                       <button
@@ -378,7 +366,7 @@ export const HeaderOld = () => {
                     data-wow-delay="0.75s"
                   >
                     <div class="icon-box">
-                      <img src="/src/images/icon-how-it-work-2.svg" alt="" />
+                      <img src="/images/icon-how-it-work-2.svg" alt="" />
                     </div>
                     <h2 class="accordion-header" id="workheading2">
                       <button
@@ -412,7 +400,7 @@ export const HeaderOld = () => {
                   {/* <!-- FAQ Item Start --> */}
                   <div class="accordion-item wow fadeInUp" data-wow-delay="1s">
                     <div class="icon-box">
-                      <img src="/src/images/icon-how-it-work-3.svg" alt="" />
+                      <img src="/images/icon-how-it-work-3.svg" alt="" />
                     </div>
                     <h2 class="accordion-header" id="workheading3">
                       <button
@@ -454,7 +442,7 @@ export const HeaderOld = () => {
                 {/* <!-- How Work Image Start --> */}
                 <div class="how-work-img">
                   {/* <figure class="reveal"> */}
-                  <img src="/src/images/about-img-1.jpg" alt="" />
+                  <img src="/images/about-img-1.jpg" alt="" />
                   {/* </figure> */}
                 </div>
                 {/* <!-- How Work Image End --> */}
@@ -468,7 +456,7 @@ export const HeaderOld = () => {
                     </h3>
                   </div>
                   <div class="trusted-client--image">
-                    <img src="/src/images/trusted-client-img.png" alt="" />
+                    <img src="/images/trusted-client-img.png" alt="" />
                   </div>
                 </div>
                 {/* <!-- Trusted Client End --> */}
@@ -519,7 +507,7 @@ export const HeaderOld = () => {
                       {/* <!-- company Logo Start --> */}
                       <div class="swiper-slide">
                         <div class="company-logo">
-                          <img src="/src/images/client-logo-1.svg" alt="" />
+                          <img src="/images/client-logo-1.svg" alt="" />
                         </div>
                       </div>
                       {/* <!-- company Logo End --> */}
@@ -527,7 +515,7 @@ export const HeaderOld = () => {
                       {/* <!-- company Logo Start --> */}
                       <div class="swiper-slide">
                         <div class="company-logo">
-                          <img src="/src/images/client-logo-2.svg" alt="" />
+                          <img src="/images/client-logo-2.svg" alt="" />
                         </div>
                       </div>
                       {/* <!-- company Logo End --> */}
@@ -535,7 +523,7 @@ export const HeaderOld = () => {
                       {/* <!-- company Logo Start --> */}
                       <div class="swiper-slide">
                         <div class="company-logo">
-                          <img src="/src/images/client-logo-3.svg" alt="" />
+                          <img src="/images/client-logo-3.svg" alt="" />
                         </div>
                       </div>
                       {/* <!-- company Logo End --> */}
@@ -543,7 +531,7 @@ export const HeaderOld = () => {
                       {/* <!-- company Logo Start --> */}
                       <div class="swiper-slide">
                         <div class="company-logo">
-                          <img src="/src/images/client-logo-4.svg" alt="" />
+                          <img src="/images/client-logo-4.svg" alt="" />
                         </div>
                       </div>
                       {/* <!-- company Logo End --> */}
@@ -551,7 +539,7 @@ export const HeaderOld = () => {
                       {/* <!-- company Logo Start --> */}
                       <div class="swiper-slide">
                         <div class="company-logo">
-                          <img src="/src/images/client-logo-5.svg" alt="" />
+                          <img src="/images/client-logo-5.svg" alt="" />
                         </div>
                       </div>
                       {/* <!-- company Logo End --> */}
@@ -559,7 +547,7 @@ export const HeaderOld = () => {
                       {/* <!-- company Logo Start --> */}
                       <div class="swiper-slide">
                         <div class="company-logo">
-                          <img src="/src/images/client-logo-6.svg" alt="" />
+                          <img src="/images/client-logo-6.svg" alt="" />
                         </div>
                       </div>
                       {/* <!-- company Logo End --> */}
@@ -567,7 +555,7 @@ export const HeaderOld = () => {
                       {/* <!-- company Logo Start --> */}
                       <div class="swiper-slide">
                         <div class="company-logo">
-                          <img src="/src/images/client-logo-5.svg" alt="" />
+                          <img src="/images/client-logo-5.svg" alt="" />
                         </div>
                       </div>
                       {/* <!-- company Logo End --> */}
@@ -575,7 +563,7 @@ export const HeaderOld = () => {
                       {/* <!-- company Logo Start --> */}
                       <div class="swiper-slide">
                         <div class="company-logo">
-                          <img src="/src/images/client-logo-4.svg" alt="" />
+                          <img src="/images/client-logo-4.svg" alt="" />
                         </div>
                       </div>
                       {/* <!-- company Logo End --> */}
@@ -612,7 +600,7 @@ export const HeaderOld = () => {
               {/* <!-- Why Choose Item Start --> */}
               <div class="why-choose-item wow fadeInUp">
                 <div class="icon-box">
-                  <img src="/src/images/icon-why-choose-1.svg" alt="" />
+                  <img src="/images/icon-why-choose-1.svg" alt="" />
                 </div>
                 <div class="why-choose-content">
                   <h3>extensive fleet options</h3>
@@ -627,7 +615,7 @@ export const HeaderOld = () => {
               {/* <!-- Why Choose Item Start --> */}
               <div class="why-choose-item wow fadeInUp" data-wow-delay="0.25s">
                 <div class="icon-box">
-                  <img src="/src/images/icon-why-choose-2.svg" alt="" />
+                  <img src="/images/icon-why-choose-2.svg" alt="" />
                 </div>
                 <div class="why-choose-content">
                   <h3>exceptional customer service</h3>
@@ -643,7 +631,7 @@ export const HeaderOld = () => {
             <div class="col-lg-4 col-md-12 order-lg-2 order-md-3 order-2">
               <div class="why-choose-image">
                 {/* <figure class="reveal"> */}
-                <img src="/src/images/why-choose-img.jpg" alt="" />
+                <img src="/images/why-choose-img.jpg" alt="" />
                 {/* </figure> */}
               </div>
             </div>
@@ -652,7 +640,7 @@ export const HeaderOld = () => {
               {/* <!-- Why Choose Item Start --> */}
               <div class="why-choose-item wow fadeInUp">
                 <div class="icon-box">
-                  <img src="/src/images/icon-why-choose-3.svg" alt="" />
+                  <img src="/images/icon-why-choose-3.svg" alt="" />
                 </div>
                 <div class="why-choose-content">
                   <h3>convenient locations</h3>
@@ -667,7 +655,7 @@ export const HeaderOld = () => {
               {/* <!-- Why Choose Item Start --> */}
               <div class="why-choose-item wow fadeInUp" data-wow-delay="0.25s">
                 <div class="icon-box">
-                  <img src="/src/images/icon-why-choose-4.svg" alt="" />
+                  <img src="/images/icon-why-choose-4.svg" alt="" />
                 </div>
                 <div class="why-choose-content">
                   <h3>reliability and safety</h3>
@@ -693,13 +681,13 @@ export const HeaderOld = () => {
               <div class="our-faqs-image">
                 <div class="faqs-img-1">
                   <figure class="image-anime">
-                    <img src="/src/images/our-faqs-img-1.jpg" alt="" />
+                    <img src="/images/our-faqs-img-1.jpg" alt="" />
                   </figure>
                 </div>
 
                 <div class="faqs-img-2">
                   <figure class="image-anime">
-                    <img src="/src/images/our-faqs-img-2.jpg" alt="" />
+                    <img src="/images/our-faqs-img-2.jpg" alt="" />
                   </figure>
                 </div>
               </div>
@@ -865,7 +853,7 @@ export const HeaderOld = () => {
               {/* <!-- Cta Box Image Start --> */}
               <div class="cat-box-image">
                 <figure>
-                  <img src="/src/images/cta-car-img.png" alt="" />
+                  <img src="/images/cta-car-img.png" alt="" />
                 </figure>
               </div>
               {/* <!-- Cta Box Image End --> */}
@@ -899,7 +887,7 @@ export const HeaderOld = () => {
                 <div class="highlighted-article-featured-img">
                   <figure>
                     <a href="#" class="image-anime" data-cursor-text="View">
-                      <img src="/src/images/post-1.jpg" alt="" />
+                      <img src="/images/post-1.jpg" alt="" />
                     </a>
                   </figure>
                 </div>
@@ -927,7 +915,7 @@ export const HeaderOld = () => {
                       </a>
                     </h3>
                     <a href="#" class="section-icon-btn">
-                      <img src="/src/images/arrow-white.svg" alt="" />
+                      <img src="/images/arrow-white.svg" alt="" />
                     </a>
                   </div>
                   {/* <!-- Highlighted Article Content End --> */}
@@ -942,7 +930,7 @@ export const HeaderOld = () => {
                 <div class="article-featured-img">
                   <figure>
                     <a href="#" class="image-anime" data-cursor-text="View">
-                      <img src="/src/images/post-2.jpg" alt="" />
+                      <img src="/images/post-2.jpg" alt="" />
                     </a>
                   </figure>
                 </div>
@@ -980,7 +968,7 @@ export const HeaderOld = () => {
                 <div class="article-featured-img">
                   <figure>
                     <a href="#" class="image-anime" data-cursor-text="View">
-                      <img src="/src/images/post-3.jpg" alt="" />
+                      <img src="/images/post-3.jpg" alt="" />
                     </a>
                   </figure>
                 </div>
@@ -1018,7 +1006,7 @@ export const HeaderOld = () => {
                 <div class="article-featured-img">
                   <figure>
                     <a href="#" class="image-anime" data-cursor-text="View">
-                      <img src="/src/images/post-4.jpg" alt="" />
+                      <img src="/images/post-4.jpg" alt="" />
                     </a>
                   </figure>
                 </div>

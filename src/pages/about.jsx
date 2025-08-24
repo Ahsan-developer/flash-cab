@@ -11,7 +11,7 @@ export default function About() {
               {/* <!-- About Image Start --> */}
               <div class="about-img-1">
                 {/* <figure class="reveal"> */}
-                <img src="/src/images/about-img-1.jpg" alt="" />
+                <img src="/images/about-img-1.jpg" alt="" />
                 {/* </figure> */}
               </div>
               {/* <!-- About Image End --> */}
@@ -19,7 +19,7 @@ export default function About() {
               {/* <!-- About Image Start --> */}
               <div class="about-img-2">
                 {/* <figure class="reveal"> */}
-                <img src="/src/images/about-img-2.jpg" alt="" />
+                <img src="/images/about-img-2.jpg" alt="" />
                 {/* </figure> */}
               </div>
               {/* <!-- About Image End --> */}
@@ -51,7 +51,7 @@ export default function About() {
                   data-wow-delay="0.5s"
                 >
                   <div class="icon-box">
-                    <img src="/src/images/icon-about-trusted-1.svg" alt="" />
+                    <img src="/images/icon-about-trusted-1.svg" alt="" />
                   </div>
                   <div class="trusted-booking-content">
                     <h3>easy booking process</h3>
@@ -69,7 +69,7 @@ export default function About() {
                   data-wow-delay="0.75s"
                 >
                   <div class="icon-box">
-                    <img src="/src/images/icon-about-trusted-2.svg" alt="" />
+                    <img src="/images/icon-about-trusted-2.svg" alt="" />
                   </div>
                   <div class="trusted-booking-content">
                     <h3>convenient pick-up & return process</h3>

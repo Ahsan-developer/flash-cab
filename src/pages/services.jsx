@@ -22,7 +22,7 @@ export default function Services() {
             {/* <!-- Service Item Start --> */}
             <div class="service-item wow fadeInUp">
               <div class="icon-box">
-                <img src="/src/images/icon-service-1.svg" alt="" />
+                <img src="/images/icon-service-1.svg" alt="" />
               </div>
               <div class="service-content">
                 <h3>car rental with driver</h3>
@@ -30,7 +30,7 @@ export default function Services() {
               </div>
               <div class="service-footer">
                 <a href="#" class="section-icon-btn">
-                  <img src="/src/images/arrow-white.svg" alt="" />
+                  <img src="/images/arrow-white.svg" alt="" />
                 </a>
               </div>
             </div>
@@ -41,7 +41,7 @@ export default function Services() {
             {/* <!-- Service Item Start --> */}
             <div class="service-item wow fadeInUp" data-wow-delay="0.25s">
               <div class="icon-box">
-                <img src="/src/images/icon-service-2.svg" alt="" />
+                <img src="/images/icon-service-2.svg" alt="" />
               </div>
               <div class="service-content">
                 <h3>business car rental</h3>
@@ -49,7 +49,7 @@ export default function Services() {
               </div>
               <div class="service-footer">
                 <a href="#" class="section-icon-btn">
-                  <img src="/src/images/arrow-white.svg" alt="" />
+                  <img src="/images/arrow-white.svg" alt="" />
                 </a>
               </div>
             </div>
@@ -60,7 +60,7 @@ export default function Services() {
             {/* <!-- Service Item Start --> */}
             <div class="service-item wow fadeInUp" data-wow-delay="0.5s">
               <div class="icon-box">
-                <img src="/src/images/icon-service-3.svg" alt="" />
+                <img src="/images/icon-service-3.svg" alt="" />
               </div>
               <div class="service-content">
                 <h3>airport transfer</h3>
@@ -68,7 +68,7 @@ export default function Services() {
               </div>
               <div class="service-footer">
                 <a href="#" class="section-icon-btn">
-                  <img src="/src/images/arrow-white.svg" alt="" />
+                  <img src="/images/arrow-white.svg" alt="" />
                 </a>
               </div>
             </div>
@@ -79,7 +79,7 @@ export default function Services() {
             {/* <!-- Service Item Start --> */}
             <div class="service-item wow fadeInUp" data-wow-delay="0.75s">
               <div class="icon-box">
-                <img src="/src/images/icon-service-4.svg" alt="" />
+                <img src="/images/icon-service-4.svg" alt="" />
               </div>
               <div class="service-content">
                 <h3>chauffeur services</h3>
@@ -87,7 +87,7 @@ export default function Services() {
               </div>
               <div class="service-footer">
                 <a href="#" class="section-icon-btn">
-                  <img src="/src/images/arrow-white.svg" alt="" />
+                  <img src="/images/arrow-white.svg" alt="" />
                 </a>
               </div>
             </div>

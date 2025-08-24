@@ -25,7 +25,7 @@ export default function Article() {
               <div class="highlighted-article-featured-img">
                 <figure>
                   <a href="#" class="image-anime" data-cursor-text="View">
-                    <img src="/src/images/post-1.jpg" alt="" />
+                    <img src="/images/post-1.jpg" alt="" />
                   </a>
                 </figure>
               </div>
@@ -53,7 +53,7 @@ export default function Article() {
                     </a>
                   </h3>
                   <a href="#" class="section-icon-btn">
-                    <img src="/src/images/arrow-white.svg" alt="" />
+                    <img src="/images/arrow-white.svg" alt="" />
                   </a>
                 </div>
                 {/* <!-- Highlighted Article Content End --> */}
@@ -68,7 +68,7 @@ export default function Article() {
               <div class="article-featured-img">
                 <figure>
                   <a href="#" class="image-anime" data-cursor-text="View">
-                    <img src="/src/images/post-2.jpg" alt="" />
+                    <img src="/images/post-2.jpg" alt="" />
                   </a>
                 </figure>
               </div>
@@ -106,7 +106,7 @@ export default function Article() {
               <div class="article-featured-img">
                 <figure>
                   <a href="#" class="image-anime" data-cursor-text="View">
-                    <img src="/src/images/post-3.jpg" alt="" />
+                    <img src="/images/post-3.jpg" alt="" />
                   </a>
                 </figure>
               </div>
@@ -144,7 +144,7 @@ export default function Article() {
               <div class="article-featured-img">
                 <figure>
                   <a href="#" class="image-anime" data-cursor-text="View">
-                    <img src="/src/images/post-4.jpg" alt="" />
+                    <img src="/images/post-4.jpg" alt="" />
                   </a>
                 </figure>
               </div>

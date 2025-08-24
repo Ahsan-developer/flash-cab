@@ -222,7 +222,7 @@ body {
 	height: 48px;
 	border-radius: 50%;
 	background-color: var(--accent-color);
-	background-image: url("../images/arrow-white.svg");
+	background-image: url("/images/arrow-white.svg");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 14px auto;
@@ -243,7 +243,7 @@ body {
 
 .btn-default.btn-highlighted:before {
 	background-color: var(--white-color);
-	background-image: url("../images/arrow-black.svg");
+	background-image: url("/images/arrow-black.svg");
 }
 
 .btn-default.btn-highlighted:hover::before {
@@ -390,7 +390,7 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: url("../images/icon-sub-heading.svg") no-repeat;
+	background: url("/images/icon-sub-heading.svg") no-repeat;
 	background-position: left center;
 	background-size: cover;
 	width: 18px;
@@ -692,7 +692,7 @@ header.main-header .header-sticky.active {
 
 .hero-section.bg-section {
 	position: relative;
-	background: url("../images/hero-bg.jpg") no-repeat;
+	background: url("/images/hero-bg.jpg") no-repeat;
 	background-position: center center;
 	background-size: cover;
 	overflow: hidden;
@@ -1003,7 +1003,7 @@ header.main-header .header-sticky.active {
 }
 
 .rent-details-content .datepicker {
-	/* background: transparent url(../images/icon-calendar.svg) no-repeat right
+	/* background: transparent url(/images/icon-calendar.svg) no-repeat right
     center; */
 	background-size: auto 14px;
 	border: none;
@@ -1134,7 +1134,7 @@ header.main-header .header-sticky.active {
 
 .about-image {
 	position: relative;
-	background: url("../images/about-image-bg.svg") no-repeat;
+	background: url("/images/about-image-bg.svg") no-repeat;
 	background-position: bottom 25px right 50px;
 	background-size: auto;
 	padding-bottom: 100px;
@@ -1264,7 +1264,7 @@ header.main-header .header-sticky.active {
 /************************************/
 
 .our-services {
-	background: var(--secondary-color) url("../images/asterisk-icon-bg.svg") no-repeat;
+	background: var(--secondary-color) url("/images/asterisk-icon-bg.svg") no-repeat;
 	background-position: bottom left;
 	background-size: auto;
 	padding: 100px 0;
@@ -1532,7 +1532,7 @@ header.main-header .header-sticky.active {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: url("../images/arrow-white.svg") no-repeat center center;
+	background: url("/images/arrow-white.svg") no-repeat center center;
 	background-size: 14px auto;
 	transform: rotate(45deg);
 	display: flex;
@@ -1726,7 +1726,7 @@ header.main-header .header-sticky.active {
 
 .how-work-image {
 	position: relative;
-	background: url("../images/about-image-bg.svg") no-repeat;
+	background: url("/images/about-image-bg.svg") no-repeat;
 	background-position: bottom right;
 	padding-bottom: 50px;
 	margin-left: 30px;
@@ -1793,7 +1793,7 @@ header.main-header .header-sticky.active {
 
 .intro-video {
 	position: relative;
-	background: url("../images/intro-video-bg.jpg") no-repeat;
+	background: url("/images/intro-video-bg.jpg") no-repeat;
 	background-position: center center;
 	background-size: cover;
 	padding: 100px 0;
@@ -1893,7 +1893,7 @@ header.main-header .header-sticky.active {
 /************************************/
 
 .why-choose-us {
-	background: url("../images/why-choose-us-bg.svg") no-repeat;
+	background: url("/images/why-choose-us-bg.svg") no-repeat;
 	background-position: center center;
 	background-size: auto;
 	padding: 100px 0;
@@ -1966,7 +1966,7 @@ header.main-header .header-sticky.active {
 	right: 0;
 	width: 100%;
 	height: 100%;
-	background: url("../images/why-choose-car-img.png") no-repeat;
+	background: url("/images/why-choose-car-img.png") no-repeat;
 	background-position: bottom center;
 	background-size: 100% auto;
 	z-index: 1;
@@ -2001,7 +2001,7 @@ header.main-header .header-sticky.active {
 	right: 0;
 	width: 100%;
 	height: 100%;
-	background: url(../images/our-faqs-car-img.png) no-repeat;
+	background: url(/images/our-faqs-car-img.png) no-repeat;
 	background-position: center center;
 	background-size: 100% auto;
 	z-index: 1;
@@ -2010,8 +2010,8 @@ header.main-header .header-sticky.active {
 .faqs-img-2 figure,
 .faqs-img-1 figure {
 	display: inline-block;
-	mask-image: url(../images/our-faqs-bg-shape.svg);
-	background-image: url(../images/our-faqs-bg-shape.svg);
+	mask-image: url(/images/our-faqs-bg-shape.svg);
+	background-image: url(/images/our-faqs-bg-shape.svg);
 	mask-size: cover;
 	mask-position: center center;
 	mask-repeat: no-repeat;
@@ -2092,7 +2092,7 @@ header.main-header .header-sticky.active {
 /************************************/
 
 .our-testimonial {
-	background: url("../images/testimonial-bg.png") no-repeat;
+	background: url("/images/testimonial-bg.png") no-repeat;
 	background-position: center center;
 	background-size: auto;
 	padding: 100px 0;
@@ -2193,7 +2193,7 @@ header.main-header .header-sticky.active {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: url("../images/arrow-white.svg") no-repeat center center;
+	background: url("/images/arrow-white.svg") no-repeat center center;
 	background-size: 14px auto;
 	transform: rotate(45deg);
 	display: flex;
@@ -2211,7 +2211,7 @@ header.main-header .header-sticky.active {
 /************************************/
 
 .cta-box {
-	background: var(--primary-color) url("../images/cta-box-bg.svg") no-repeat;
+	background: var(--primary-color) url("/images/cta-box-bg.svg") no-repeat;
 	background-position: center center;
 	background-size: cover;
 	padding: 100px 0;
@@ -2409,7 +2409,7 @@ header.main-header .header-sticky.active {
 	top: 2px;
 	right: 0;
 	bottom: 0;
-	background-image: url("../images/arrow-white.svg");
+	background-image: url("/images/arrow-white.svg");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 8px auto;
@@ -2430,7 +2430,7 @@ header.main-header .header-sticky.active {
 /************************************/
 
 .main-footer {
-	background: var(--primary-color) url("../images/footer-bg.svg") no-repeat;
+	background: var(--primary-color) url("/images/footer-bg.svg") no-repeat;
 	background-position: top center;
 	background-size: 100% auto;
 	padding: 70px 0 25px;
@@ -2582,7 +2582,7 @@ header.main-header .header-sticky.active {
 
 .page-header {
 	position: relative;
-	background: url("../images/page-header-bg.jpg") no-repeat center center;
+	background: url("/images/page-header-bg.jpg") no-repeat center center;
 	background-size: cover;
 	border-radius: 46px;
 	overflow: hidden;
@@ -2649,7 +2649,7 @@ header.main-header .header-sticky.active {
 }
 
 .exclusive-partners {
-	background: var(--secondary-color) url("../images/asterisk-icon-bg.svg") no-repeat;
+	background: var(--secondary-color) url("/images/asterisk-icon-bg.svg") no-repeat;
 	background-position: bottom left;
 	background-size: auto;
 	padding: 100px 0 70px;
@@ -3078,7 +3078,7 @@ header.main-header .header-sticky.active {
 	top: 50%;
 	right: 0px;
 	transform: translate(0px, -50%);
-	background-image: url("../images/arrow-orange.svg");
+	background-image: url("/images/arrow-orange.svg");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 12px auto;
@@ -3769,7 +3769,7 @@ header.main-header .header-sticky.active {
 }
 
 .booking-form-group .booking-form-control.datepicker {
-	background: transparent url(../images/icon-calendar.svg) no-repeat right 15px center;
+	background: transparent url(/images/icon-calendar.svg) no-repeat right 15px center;
 	background-size: auto 14px;
 	margin-left: 0;
 	line-height: 1.5em;
@@ -4176,7 +4176,7 @@ header.main-header .header-sticky.active {
 	top: 2px;
 	right: 0;
 	bottom: 0;
-	background-image: url("../images/arrow-white.svg");
+	background-image: url("/images/arrow-white.svg");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 8px auto;
@@ -4374,7 +4374,7 @@ header.main-header .header-sticky.active {
 }
 
 .post-entry blockquote {
-	background: var(--secondary-color) url(../images/icon-blockquote.svg) no-repeat 35px 40px;
+	background: var(--secondary-color) url(/images/icon-blockquote.svg) no-repeat 35px 40px;
 	background-size: 45px;
 	border-radius: 40px;
 	padding: 30px 30px 30px 100px;
@@ -4536,7 +4536,7 @@ header.main-header .header-sticky.active {
 }
 
 .pricing-item.highlighted-box .pricing-item-btn .btn-default.btn-highlighted::before {
-	background-image: url("../images/arrow-orange.svg");
+	background-image: url("/images/arrow-orange.svg");
 }
 
 .pricing-item.highlighted-box .pricing-item-btn .btn-default.btn-highlighted:hover:before {
@@ -4673,7 +4673,7 @@ header.main-header .header-sticky.active {
 }
 
 .contact-info-form {
-	background: url("../images/contact-form-plan.svg") no-repeat;
+	background: url("/images/contact-form-plan.svg") no-repeat;
 	background-position: bottom -10px right 50px;
 	background-size: auto;
 	width: 100%;
@@ -4685,7 +4685,7 @@ header.main-header .header-sticky.active {
 }
 
 .contact-information {
-	background: var(--primary-color) url("../images/contact-information-bg.svg") no-repeat;
+	background: var(--primary-color) url("/images/contact-information-bg.svg") no-repeat;
 	background-position: bottom right;
 	background-size: auto;
 	border-radius: 30px;
@@ -4873,7 +4873,7 @@ header.main-header .header-sticky.active {
 	right: 0;
 	bottom: 0;
 	transform: translateY(6px);
-	background: url("../images/arrow-orange.svg") no-repeat center center;
+	background: url("/images/arrow-orange.svg") no-repeat center center;
 	background-size: 12px auto;
 	width: 14px;
 	height: 14px;
@@ -5766,7 +5766,7 @@ header.main-header .header-sticky.active {
 	}
 
 	.post-entry blockquote {
-		background: var(--secondary-color) url("../images/icon-blockquote.svg") no-repeat 30px 35px;
+		background: var(--secondary-color) url("/images/icon-blockquote.svg") no-repeat 30px 35px;
 		background-size: 45px;
 		padding: 25px 25px 25px 90px;
 		margin-bottom: 20px;
@@ -6569,7 +6569,7 @@ header.main-header .header-sticky.active {
 	}
 
 	.post-entry blockquote {
-		background: var(--secondary-color) url(../images/icon-blockquote.svg) no-repeat 20px 20px;
+		background: var(--secondary-color) url(/images/icon-blockquote.svg) no-repeat 20px 20px;
 		background-size: 35px;
 		padding: 55px 20px 20px 20px;
 	}

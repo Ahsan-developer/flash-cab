@@ -40,7 +40,7 @@ export default function IntroVideo() {
                     {/* <!-- company Logo Start --> */}
                     <div class="swiper-slide">
                       <div class="company-logo">
-                        <img src="/src/images/client-logo-1.svg" alt="" />
+                        <img src="/images/client-logo-1.svg" alt="" />
                       </div>
                     </div>
                     {/* <!-- company Logo End --> */}
@@ -48,7 +48,7 @@ export default function IntroVideo() {
                     {/* <!-- company Logo Start --> */}
                     <div class="swiper-slide">
                       <div class="company-logo">
-                        <img src="/src/images/client-logo-2.svg" alt="" />
+                        <img src="/images/client-logo-2.svg" alt="" />
                       </div>
                     </div>
                     {/* <!-- company Logo End --> */}
@@ -56,7 +56,7 @@ export default function IntroVideo() {
                     {/* <!-- company Logo Start --> */}
                     <div class="swiper-slide">
                       <div class="company-logo">
-                        <img src="/src/images/client-logo-3.svg" alt="" />
+                        <img src="/images/client-logo-3.svg" alt="" />
                       </div>
                     </div>
                     {/* <!-- company Logo End --> */}
@@ -64,7 +64,7 @@ export default function IntroVideo() {
                     {/* <!-- company Logo Start --> */}
                     <div class="swiper-slide">
                       <div class="company-logo">
-                        <img src="/src/images/client-logo-4.svg" alt="" />
+                        <img src="/images/client-logo-4.svg" alt="" />
                       </div>
                     </div>
                     {/* <!-- company Logo End --> */}
@@ -72,7 +72,7 @@ export default function IntroVideo() {
                     {/* <!-- company Logo Start --> */}
                     <div class="swiper-slide">
                       <div class="company-logo">
-                        <img src="/src/images/client-logo-5.svg" alt="" />
+                        <img src="/images/client-logo-5.svg" alt="" />
                       </div>
                     </div>
                     {/* <!-- company Logo End --> */}
@@ -80,7 +80,7 @@ export default function IntroVideo() {
                     {/* <!-- company Logo Start --> */}
                     <div class="swiper-slide">
                       <div class="company-logo">
-                        <img src="/src/images/client-logo-6.svg" alt="" />
+                        <img src="/images/client-logo-6.svg" alt="" />
                       </div>
                     </div>
                     {/* <!-- company Logo End --> */}
@@ -88,7 +88,7 @@ export default function IntroVideo() {
                     {/* <!-- company Logo Start --> */}
                     <div class="swiper-slide">
                       <div class="company-logo">
-                        <img src="/src/images/client-logo-5.svg" alt="" />
+                        <img src="/images/client-logo-5.svg" alt="" />
                       </div>
                     </div>
                     {/* <!-- company Logo End --> */}
@@ -96,7 +96,7 @@ export default function IntroVideo() {
                     {/* <!-- company Logo Start --> */}
                     <div class="swiper-slide">
                       <div class="company-logo">
-                        <img src="/src/images/client-logo-4.svg" alt="" />
+                        <img src="/images/client-logo-4.svg" alt="" />
                       </div>
                     </div>
                     {/* <!-- company Logo End --> */}

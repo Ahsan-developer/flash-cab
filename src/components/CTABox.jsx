@@ -35,7 +35,7 @@ export default function CTABox() {
             {/* <!-- Cta Box Image Start --> */}
             <div class="cat-box-image">
               <figure>
-                <img src="/src/images/cta-car-img.png" alt="" />
+                <img src="/images/cta-car-img.png" alt="" />
               </figure>
             </div>
             {/* <!-- Cta Box Image End --> */}

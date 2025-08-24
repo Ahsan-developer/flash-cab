@@ -8,7 +8,7 @@ export default function Header() {
           <div class="container">
             {/* <!-- Logo Start --> */}
             <a class="navbar-brand" href="index.html">
-              {/* <img src="/src/images/logo.svg" alt="Logo" /> */}
+              {/* <img src="/images/logo.svg" alt="Logo" /> */}
               <h1>Flash Cab</h1>
             </a>
             {/* <!-- Logo End --> */}

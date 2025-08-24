@@ -10,13 +10,13 @@ export default function Faqs() {
             <div class="our-faqs-image">
               <div class="faqs-img-1">
                 <figure class="image-anime">
-                  <img src="/src/images/our-faqs-img-1.jpg" alt="" />
+                  <img src="/images/our-faqs-img-1.jpg" alt="" />
                 </figure>
               </div>
 
               <div class="faqs-img-2">
                 <figure class="image-anime">
-                  <img src="/src/images/our-faqs-img-2.jpg" alt="" />
+                  <img src="/images/our-faqs-img-2.jpg" alt="" />
                 </figure>
               </div>
             </div>

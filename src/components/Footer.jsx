@@ -10,7 +10,7 @@ export default function Footer() {
             <div class="about-footer">
               {/* <!-- Footer Logo Start --> */}
               <div class="footer-logo">
-                {/* <img src="/src/images/footer-logo.svg" alt=""/> */}
+                {/* <img src="/images/footer-logo.svg" alt=""/> */}
                 <h1>Flash Cab</h1>
               </div>
               {/* <!-- Footer Logo End --> */}
@@ -88,7 +88,7 @@ export default function Footer() {
                       required
                     />
                     <button type="submit" class="section-icon-btn">
-                      <img src="/src/images/arrow-white.svg" alt="" />
+                      <img src="/images/arrow-white.svg" alt="" />
                     </button>
                   </div>
                 </form>

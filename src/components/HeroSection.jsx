@@ -115,7 +115,7 @@ export default function HeroSection() {
                     {/* <!-- Rent Details Item Start --> */}
                     <div class="rent-details-item">
                       <div class="icon-box">
-                        <img src="/src/images/icon-rent-details-1.svg" alt="" />
+                        <img src="/images/icon-rent-details-1.svg" alt="" />
                       </div>
                       <div class="rent-details-content">
                         <h3>car type</h3>
@@ -139,7 +139,7 @@ export default function HeroSection() {
                     {/* <!-- Rent Details Item Start --> */}
                     <div class="rent-details-item">
                       <div class="icon-box">
-                        <img src="/src/images/icon-rent-details-2.svg" alt="" />
+                        <img src="/images/icon-rent-details-2.svg" alt="" />
                       </div>
                       <div class="rent-details-content">
                         <h3>pickup location</h3>
@@ -159,7 +159,7 @@ export default function HeroSection() {
                     {/* <!-- Rent Details Item Start --> */}
                     <div class="rent-details-item">
                       <div class="icon-box">
-                        <img src="/src/images/icon-rent-details-4.svg" alt="" />
+                        <img src="/images/icon-rent-details-4.svg" alt="" />
                       </div>
                       <div class="rent-details-content">
                         <h3>Dropoff location</h3>
@@ -178,7 +178,7 @@ export default function HeroSection() {
                     {/* <!-- Rent Details Item Start --> */}
                     <div class="rent-details-item">
                       <div class="icon-box">
-                        <img src="/src/images/icon-rent-details-3.svg" alt="" />
+                        <img src="/images/icon-rent-details-3.svg" alt="" />
                       </div>
                       <div class="rent-details-content">
                         <h3>pickup date</h3>
@@ -198,7 +198,7 @@ export default function HeroSection() {
                     {/* <!-- Rent Details Item Start --> */}
                     <div class="rent-details-item">
                       <div class="icon-box">
-                        <img src="/src/images/icon-rent-details-5.svg" alt="" />
+                        <img src="/images/icon-rent-details-5.svg" alt="" />
                       </div>
                       <div class="rent-details-content">
                         <h3>Return Date</h3>

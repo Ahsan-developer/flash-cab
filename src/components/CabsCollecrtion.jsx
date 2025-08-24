@@ -13,10 +13,7 @@ export default function CabsCollecrtion() {
                 <div class="luxury-collection-image" data-cursor-text="View">
                   <a href="#">
                     <figure>
-                      <img
-                        src="/src/images/luxury-collection-img-1.jpg"
-                        alt=""
-                      />
+                      <img src="/images/luxury-collection-img-1.jpg" alt="" />
                     </figure>
                   </a>
                 </div>
@@ -31,7 +28,7 @@ export default function CabsCollecrtion() {
                 {/* <!-- Luxury Collection Btn Start --> */}
                 <div class="luxury-collection-btn">
                   <a href="#" class="section-icon-btn">
-                    <img src="/src/images/arrow-white.svg" alt="" />
+                    <img src="/images/arrow-white.svg" alt="" />
                   </a>
                 </div>
                 {/* <!-- Luxury Collection Btn End --> */}
@@ -47,10 +44,7 @@ export default function CabsCollecrtion() {
                 <div class="luxury-collection-image" data-cursor-text="View">
                   <a href="#">
                     <figure>
-                      <img
-                        src="/src/images/luxury-collection-img-2.jpg"
-                        alt=""
-                      />
+                      <img src="/images/luxury-collection-img-2.jpg" alt="" />
                     </figure>
                   </a>
                 </div>
@@ -65,7 +59,7 @@ export default function CabsCollecrtion() {
                 {/* <!-- Luxury Collection Footer Start --> */}
                 <div class="luxury-collection-btn">
                   <a href="#" class="section-icon-btn">
-                    <img src="/src/images/arrow-white.svg" alt="" />
+                    <img src="/images/arrow-white.svg" alt="" />
                   </a>
                 </div>
                 {/* <!-- Luxury Collection Footer End --> */}
@@ -81,10 +75,7 @@ export default function CabsCollecrtion() {
                 <div class="luxury-collection-image" data-cursor-text="View">
                   <a href="#">
                     <figure>
-                      <img
-                        src="/src/images/luxury-collection-img-3.jpg"
-                        alt=""
-                      />
+                      <img src="/images/luxury-collection-img-3.jpg" alt="" />
                     </figure>
                   </a>
                 </div>
@@ -99,7 +90,7 @@ export default function CabsCollecrtion() {
                 {/* <!-- Luxury Collection Footer Start --> */}
                 <div class="luxury-collection-btn">
                   <a href="#" class="section-icon-btn">
-                    <img src="/src/images/arrow-white.svg" alt="" />
+                    <img src="/images/arrow-white.svg" alt="" />
                   </a>
                 </div>
                 {/* <!-- Luxury Collection Footer End --> */}
@@ -115,10 +106,7 @@ export default function CabsCollecrtion() {
                 <div class="luxury-collection-image" data-cursor-text="View">
                   <a href="#">
                     <figure>
-                      <img
-                        src="/src/images/luxury-collection-img-4.jpg"
-                        alt=""
-                      />
+                      <img src="/images/luxury-collection-img-4.jpg" alt="" />
                     </figure>
                   </a>
                 </div>
@@ -133,7 +121,7 @@ export default function CabsCollecrtion() {
                 {/* <!-- Luxury Collection Footer Start --> */}
                 <div class="luxury-collection-btn">
                   <a href="#" class="section-icon-btn">
-                    <img src="/src/images/arrow-white.svg" alt="" />
+                    <img src="/images/arrow-white.svg" alt="" />
                   </a>
                 </div>
                 {/* <!-- Luxury Collection Footer End --> */}

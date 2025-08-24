@@ -27,7 +27,7 @@ export default function HowItWork() {
                 {/* <!-- FAQ Item Start --> */}
                 <div class="accordion-item wow fadeInUp" data-wow-delay="0.5s">
                   <div class="icon-box">
-                    <img src="/src/images/icon-how-it-work-1.svg" alt="" />
+                    <img src="/images/icon-how-it-work-1.svg" alt="" />
                   </div>
                   <h2 class="accordion-header" id="workheading1">
                     <button
@@ -61,7 +61,7 @@ export default function HowItWork() {
                 {/* <!-- FAQ Item Start --> */}
                 <div class="accordion-item wow fadeInUp" data-wow-delay="0.75s">
                   <div class="icon-box">
-                    <img src="/src/images/icon-how-it-work-2.svg" alt="" />
+                    <img src="/images/icon-how-it-work-2.svg" alt="" />
                   </div>
                   <h2 class="accordion-header" id="workheading2">
                     <button
@@ -95,7 +95,7 @@ export default function HowItWork() {
                 {/* <!-- FAQ Item Start --> */}
                 <div class="accordion-item wow fadeInUp" data-wow-delay="1s">
                   <div class="icon-box">
-                    <img src="/src/images/icon-how-it-work-3.svg" alt="" />
+                    <img src="/images/icon-how-it-work-3.svg" alt="" />
                   </div>
                   <h2 class="accordion-header" id="workheading3">
                     <button
@@ -137,7 +137,7 @@ export default function HowItWork() {
               {/* <!-- How Work Image Start --> */}
               <div class="how-work-img">
                 {/* <figure class="reveal"> */}
-                <img src="/src/images/about-img-1.jpg" alt="" />
+                <img src="/images/about-img-1.jpg" alt="" />
                 {/* </figure> */}
               </div>
               {/* <!-- How Work Image End --> */}
@@ -151,7 +151,7 @@ export default function HowItWork() {
                   </h3>
                 </div>
                 <div class="trusted-client--image">
-                  <img src="/src/images/trusted-client-img.png" alt="" />
+                  <img src="/images/trusted-client-img.png" alt="" />
                 </div>
               </div>
               {/* <!-- Trusted Client End --> */}
