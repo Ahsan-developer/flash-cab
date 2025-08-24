@@ -24,7 +24,7 @@ export const HeaderOld = () => {
               {/* <!-- Logo Start --> */}
               <a class="navbar-brand" href="index.html">
                 {/* <img src="/images/logo.svg" alt="Logo" /> */}
-                <h1>Flash Cab</h1>
+                <h1>Quick Hop</h1>
               </a>
               {/* <!-- Logo End --> */}
 

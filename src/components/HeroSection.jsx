@@ -10,7 +10,7 @@ export default function HeroSection() {
               {/* <!-- Hero Content Start --> */}
               <div class="hero-content">
                 <div class="section-title">
-                  <h3 class="wow fadeInUp">welcome to Flash Cab</h3>
+                  <h3 class="wow fadeInUp">welcome to Quick Hop</h3>
                   <h1 class="text-anime-style-3" data-cursor="-opaque">
                     Looking for affordable, reliable cab rides?
                   </h1>

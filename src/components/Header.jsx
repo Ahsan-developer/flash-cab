@@ -7,10 +7,12 @@ export default function Header() {
         <nav class="navbar navbar-expand-lg">
           <div class="container">
             {/* <!-- Logo Start --> */}
-            <a class="navbar-brand" href="index.html">
-              {/* <img src="/images/logo.svg" alt="Logo" /> */}
-              <h1>Flash Cab</h1>
-            </a>
+            {/* <a class="navbar-brand" href="index.html"> */}
+            <div style={{ textAlign: "center" }}>
+              <img src="/images/logo.png" alt="Logo" width={64} height={48} />
+              <h5 style={{ color: "#ff3600" }}>Quick Hop</h5>
+            </div>
+            {/* </a> */}
             {/* <!-- Logo End --> */}
 
             {/* <!-- Main Menu Start -> */}

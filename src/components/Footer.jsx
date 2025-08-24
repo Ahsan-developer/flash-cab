@@ -11,7 +11,7 @@ export default function Footer() {
               {/* <!-- Footer Logo Start --> */}
               <div class="footer-logo">
                 {/* <img src="/images/footer-logo.svg" alt=""/> */}
-                <h1>Flash Cab</h1>
+                <h1>Quick Hop</h1>
               </div>
               {/* <!-- Footer Logo End --> */}
 
