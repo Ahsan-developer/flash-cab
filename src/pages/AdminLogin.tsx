@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { useAuth } from "@/contexts/AuthContext";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { apiClient } from "@/lib/api";
 import { Loader2, Shield, Eye, EyeOff } from "lucide-react";
 
 const AdminLogin = () => {
@@ -14,17 +14,14 @@ const AdminLogin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const { user, signIn, isAdmin } = useAuth();
+  const navigate = useNavigate();
 
-  // Redirect if already logged in as admin
-  if (user && isAdmin) {
-    return <Navigate to="/admin" replace />;
-  }
-
-  // Redirect non-admin users
-  if (user && !isAdmin) {
-    return <Navigate to="/" replace />;
-  }
+  useEffect(() => {
+    const token = sessionStorage.getItem('auth_token');
+    if (token) {
+      navigate('/admin', { replace: true });
+    }
+  }, [navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,12 +29,20 @@ const AdminLogin = () => {
     setLoading(true);
 
     try {
-      const { error } = await signIn(email, password);
-      if (error) {
-        setError(error.message);
+      const response = await apiClient.auth.signIn({
+        email,
+        password,
+      });
+
+      const token = response.data.token;
+      if (token) {
+        sessionStorage.setItem('auth_token', token);
+        navigate('/admin');
+      } else {
+        setError("Invalid response from server");
       }
-    } catch (err) {
-      setError("An unexpected error occurred");
+    } catch (err: any) {
+      setError(err.response?.data?.message || "An unexpected error occurred");
     } finally {
       setLoading(false);
     }
@@ -62,7 +67,7 @@ const AdminLogin = () => {
                 <AlertDescription>{error}</AlertDescription>
               </Alert>
             )}
-            
+
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <Input
@@ -75,7 +80,7 @@ const AdminLogin = () => {
                 placeholder="admin@quickhop.com"
               />
             </div>
-            
+
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
               <div className="relative">
@@ -103,9 +108,9 @@ const AdminLogin = () => {
                 </button>
               </div>
             </div>
-            
-            <Button 
-              type="submit" 
+
+            <Button
+              type="submit"
               className="w-full btn-primary"
               disabled={loading}
             >

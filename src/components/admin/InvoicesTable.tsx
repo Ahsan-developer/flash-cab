@@ -10,22 +10,10 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { supabase } from "@/integrations/supabase/client";
+import { apiClient } from "@/lib/api";
+import { Invoice } from "@/types";
 import { format } from "date-fns";
 
-interface Invoice {
-  id: string;
-  invoice_number: string;
-  customer_name: string;
-  customer_email: string;
-  base_fare: number;
-  additional_charges: number;
-  tax_amount: number;
-  total_amount: number;
-  payment_status: string;
-  payment_method: string;
-  created_at: string;
-}
 
 const InvoicesTable = () => {
   const [invoices, setInvoices] = useState<Invoice[]>([]);
@@ -37,13 +25,8 @@ const InvoicesTable = () => {
 
   const fetchInvoices = async () => {
     try {
-      const { data, error } = await supabase
-        .from('invoices')
-        .select('*')
-        .order('created_at', { ascending: false });
-
-      if (error) throw error;
-      setInvoices(data || []);
+      const response = await apiClient.invoices.getAll();
+      setInvoices(response.data.data || []);
     } catch (error) {
       console.error('Error fetching invoices:', error);
     } finally {
@@ -53,13 +36,8 @@ const InvoicesTable = () => {
 
   const updatePaymentStatus = async (id: string, status: string) => {
     try {
-      const { error } = await supabase
-        .from('invoices')
-        .update({ payment_status: status })
-        .eq('id', id);
+      await apiClient.invoices.updatePaymentStatus(id, status);
 
-      if (error) throw error;
-      
       // Refresh invoices
       fetchInvoices();
     } catch (error) {
@@ -134,11 +112,11 @@ const InvoicesTable = () => {
                     <div className="text-sm text-muted-foreground">{invoice.customer_email}</div>
                   </div>
                 </TableCell>
-                <TableCell>${invoice.base_fare?.toFixed(2) || '0.00'}</TableCell>
-                <TableCell>${invoice.additional_charges?.toFixed(2) || '0.00'}</TableCell>
-                <TableCell>${invoice.tax_amount?.toFixed(2) || '0.00'}</TableCell>
+                <TableCell>€{invoice.base_fare?.toFixed(2) || '0.00'}</TableCell>
+                <TableCell>€{invoice.additional_charges?.toFixed(2) || '0.00'}</TableCell>
+                <TableCell>€{invoice.tax_amount?.toFixed(2) || '0.00'}</TableCell>
                 <TableCell className="font-medium">
-                  ${invoice.total_amount?.toFixed(2) || '0.00'}
+                  €{invoice.total_amount?.toFixed(2) || '0.00'}
                 </TableCell>
                 <TableCell>{getPaymentStatusBadge(invoice.payment_status)}</TableCell>
                 <TableCell>

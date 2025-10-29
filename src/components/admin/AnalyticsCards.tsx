@@ -1,14 +1,9 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { DollarSign, TrendingUp, Users, Car } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { Coins, TrendingUp, Users, Car } from "lucide-react";
+import { apiClient } from "@/lib/api";
+import { AnalyticsData } from "@/types";
 
-interface AnalyticsData {
-  totalBookings: number;
-  totalRevenue: number;
-  completedRides: number;
-  pendingBookings: number;
-}
 
 const AnalyticsCards = () => {
   const [analytics, setAnalytics] = useState<AnalyticsData>({
@@ -25,32 +20,8 @@ const AnalyticsCards = () => {
 
   const fetchAnalytics = async () => {
     try {
-      // Fetch total bookings
-      const { data: bookings } = await supabase
-        .from('bookings')
-        .select('status, fare_amount');
-
-      // Fetch total revenue from invoices
-      const { data: invoices } = await supabase
-        .from('invoices')
-        .select('total_amount, payment_status');
-
-      if (bookings) {
-        const totalBookings = bookings.length;
-        const completedRides = bookings.filter(b => b.status === 'completed').length;
-        const pendingBookings = bookings.filter(b => b.status === 'pending').length;
-
-        const totalRevenue = invoices
-          ?.filter(inv => inv.payment_status === 'paid')
-          .reduce((sum, inv) => sum + parseFloat(inv.total_amount?.toString() || '0'), 0) || 0;
-
-        setAnalytics({
-          totalBookings,
-          totalRevenue,
-          completedRides,
-          pendingBookings,
-        });
-      }
+      const response = await apiClient.analytics.getDashboard();
+      setAnalytics(response.data);
     } catch (error) {
       console.error('Error fetching analytics:', error);
     } finally {
@@ -68,9 +39,9 @@ const AnalyticsCards = () => {
     },
     {
       title: "Total Revenue",
-      value: `$${analytics.totalRevenue.toFixed(2)}`,
+      value: `€${analytics.totalRevenue.toFixed(2)}`,
       description: "Paid invoices",
-      icon: DollarSign,
+      icon: Coins,
       trend: "+8% from last month",
     },
     {

@@ -10,26 +10,22 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { supabase } from "@/integrations/supabase/client";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { apiClient } from "@/lib/api";
+import { BookingApiResponse } from "@/types";
 import { format } from "date-fns";
+import { MoreVertical, CheckCircle2, UserCheck, Play, XCircle } from "lucide-react";
 
-interface Booking {
-  id: string;
-  pickup_location: string;
-  destination: string;
-  booking_date: string;
-  booking_time: string;
-  customer_name: string;
-  customer_email: string;
-  customer_phone: string;
-  service_type: string;
-  fare_amount: number;
-  status: string;
-  created_at: string;
-}
 
 const BookingsTable = () => {
-  const [bookings, setBookings] = useState<Booking[]>([]);
+  const [bookings, setBookings] = useState<BookingApiResponse[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -38,13 +34,9 @@ const BookingsTable = () => {
 
   const fetchBookings = async () => {
     try {
-      const { data, error } = await supabase
-        .from('bookings')
-        .select('*')
-        .order('created_at', { ascending: false });
-
-      if (error) throw error;
-      setBookings(data || []);
+      const response = await apiClient.bookings.getAll();
+      const bookingsData = response.data || [];
+      setBookings(bookingsData);
     } catch (error) {
       console.error('Error fetching bookings:', error);
     } finally {
@@ -54,13 +46,8 @@ const BookingsTable = () => {
 
   const updateBookingStatus = async (id: string, status: string) => {
     try {
-      const { error } = await supabase
-        .from('bookings')
-        .update({ status })
-        .eq('id', id);
+      await apiClient.bookings.updateStatus(id, status);
 
-      if (error) throw error;
-      
       // Refresh bookings
       fetchBookings();
     } catch (error) {
@@ -68,20 +55,72 @@ const BookingsTable = () => {
     }
   };
 
+  const normalizeStatus = (status: string): string => {
+    return status.replace(/-/g, '_');
+  };
+
   const getStatusBadge = (status: string) => {
+    const normalizedStatus = normalizeStatus(status);
     const statusColors = {
       pending: "bg-yellow-100 text-yellow-800 hover:bg-yellow-100",
       confirmed: "bg-blue-100 text-blue-800 hover:bg-blue-100",
+      driver_assigned: "bg-indigo-100 text-indigo-800 hover:bg-indigo-100",
       in_progress: "bg-purple-100 text-purple-800 hover:bg-purple-100",
       completed: "bg-green-100 text-green-800 hover:bg-green-100",
       cancelled: "bg-red-100 text-red-800 hover:bg-red-100",
     };
 
     return (
-      <Badge className={statusColors[status as keyof typeof statusColors] || "bg-gray-100 text-gray-800"}>
-        {status.replace('_', ' ').toUpperCase()}
+      <Badge className={statusColors[normalizedStatus as keyof typeof statusColors] || "bg-gray-100 text-gray-800"}>
+        {status.replace(/[-_]/g, ' ').toUpperCase()}
       </Badge>
     );
+  };
+
+  const getAvailableActions = (currentStatus: string) => {
+    const normalizedStatus = normalizeStatus(currentStatus);
+    const actions: Array<{ label: string; value: string; icon?: React.ReactNode; variant?: "default" | "destructive"; disabled?: boolean }> = [];
+
+    switch (normalizedStatus) {
+      case 'pending':
+        actions.push(
+          { label: 'Confirm (After Payment)', value: 'confirmed', icon: <CheckCircle2 className="h-4 w-4" /> },
+          { label: 'Cancel Booking', value: 'cancelled', icon: <XCircle className="h-4 w-4" />, variant: 'destructive' }
+        );
+        break;
+      case 'confirmed':
+        actions.push(
+          { label: 'Assign Driver', value: 'driver-assigned', icon: <UserCheck className="h-4 w-4" /> },
+          { label: 'Cancel Booking', value: 'cancelled', icon: <XCircle className="h-4 w-4" />, variant: 'destructive' }
+        );
+        break;
+      case 'driver_assigned':
+        actions.push(
+          { label: 'Start Ride', value: 'in-progress', icon: <Play className="h-4 w-4" /> },
+          { label: 'Cancel Booking', value: 'cancelled', icon: <XCircle className="h-4 w-4" />, variant: 'destructive' }
+        );
+        break;
+      case 'in_progress':
+        actions.push(
+          { label: 'Complete Ride', value: 'completed', icon: <CheckCircle2 className="h-4 w-4" /> },
+          { label: 'Cancel Booking', value: 'cancelled', icon: <XCircle className="h-4 w-4" />, variant: 'destructive' }
+        );
+        break;
+      case 'completed':
+        actions.push(
+          { label: 'No actions available', value: '', disabled: true }
+        );
+        break;
+      case 'cancelled':
+        actions.push(
+          { label: 'No actions available', value: '', disabled: true }
+        );
+        break;
+      default:
+        break;
+    }
+
+    return actions;
   };
 
   if (loading) {
@@ -123,61 +162,76 @@ const BookingsTable = () => {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {bookings.map((booking) => (
-              <TableRow key={booking.id}>
-                <TableCell>
-                  <div>
-                    <div className="font-medium">{booking.customer_name}</div>
-                    <div className="text-sm text-muted-foreground">{booking.customer_email}</div>
-                  </div>
-                </TableCell>
-                <TableCell>
-                  <div className="text-sm">
-                    <div className="font-medium">{booking.pickup_location}</div>
-                    <div className="text-muted-foreground">→ {booking.destination}</div>
-                  </div>
-                </TableCell>
-                <TableCell>
-                  <div className="text-sm">
-                    <div>{format(new Date(booking.booking_date), 'MMM dd, yyyy')}</div>
-                    <div className="text-muted-foreground">{booking.booking_time}</div>
-                  </div>
-                </TableCell>
-                <TableCell>{booking.service_type}</TableCell>
-                <TableCell>${booking.fare_amount?.toFixed(2) || '0.00'}</TableCell>
-                <TableCell>{getStatusBadge(booking.status)}</TableCell>
-                <TableCell>
-                  <div className="flex gap-2">
-                    {booking.status === 'pending' && (
-                      <Button
-                        size="sm"
-                        onClick={() => updateBookingStatus(booking.id, 'confirmed')}
-                      >
-                        Confirm
-                      </Button>
-                    )}
-                    {booking.status === 'confirmed' && (
-                      <Button
-                        size="sm"
-                        variant="secondary"
-                        onClick={() => updateBookingStatus(booking.id, 'in_progress')}
-                      >
-                        Start
-                      </Button>
-                    )}
-                    {booking.status === 'in_progress' && (
-                      <Button
-                        size="sm"
-                        variant="default"
-                        onClick={() => updateBookingStatus(booking.id, 'completed')}
-                      >
-                        Complete
-                      </Button>
-                    )}
-                  </div>
-                </TableCell>
-              </TableRow>
-            ))}
+            {bookings.map((booking) => {
+              const bookingId = booking._id;
+              const customerName = booking.contactInfo?.fullName ||
+                `${booking.passenger?.firstName || ''} ${booking.passenger?.lastName || ''}`.trim() ||
+                'N/A';
+              const customerEmail = booking.contactInfo?.email || booking.passenger?.email || 'N/A';
+              const pickupLocation = booking.tripDetails.pickupLocation;
+              const destinationLocation = booking.tripDetails.destinationLocation;
+              const pickupDate = booking.tripDetails.pickupDate || booking.createdAt;
+              const pickupTime = booking.tripDetails.pickupTime || booking.tripDetails.pickupDate;
+              const journeyType = booking.journeyType;
+              const fare = booking.fare;
+              return (
+                <TableRow key={bookingId}>
+                  <TableCell>
+                    <div>
+                      <div className="font-medium">{customerName}</div>
+                      <div className="text-sm text-muted-foreground">{customerEmail}</div>
+                    </div>
+                  </TableCell>
+                  <TableCell>
+                    <div className="text-sm">
+                      <div className="font-medium">{pickupLocation}</div>
+                      <div className="text-muted-foreground">→ {destinationLocation}</div>
+                    </div>
+                  </TableCell>
+                  <TableCell>
+                    <div className="text-sm">
+                      <div>{pickupDate ? format(new Date(pickupDate), 'MMM dd, yyyy') : 'N/A'}</div>
+                      <div className="text-muted-foreground">
+                        {pickupTime ? format(new Date(pickupTime), 'HH:mm') : 'N/A'}
+                      </div>
+                    </div>
+                  </TableCell>
+                  <TableCell className="capitalize">{journeyType.replace(/-/g, ' ')}</TableCell>
+                      <TableCell>€{fare
+.toFixed(2)}</TableCell>
+                  <TableCell>{getStatusBadge(booking.status)}</TableCell>
+                  <TableCell>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button variant="ghost" size="icon" className="h-8 w-8">
+                          <MoreVertical className="h-4 w-4" />
+                          <span className="sr-only">Open menu</span>
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end">
+                        <DropdownMenuLabel>Change Status</DropdownMenuLabel>
+                        <DropdownMenuSeparator />
+                        {getAvailableActions(booking.status).map((action) => (
+                          <DropdownMenuItem
+                            key={action.value}
+                            disabled={action.disabled || !action.value}
+                            onClick={() => {
+                              if (action.value && !action.disabled) {
+                                updateBookingStatus(bookingId, action.value);
+                              }
+                            }}
+                            className={action.variant === 'destructive' ? 'text-destructive focus:text-destructive' : ''}
+                          >
+                            {action.icon && <span className="mr-2">{action.icon}</span>}
+                            {action.label}
+                          </DropdownMenuItem>
+                        ))}
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </TableCell>
+                </TableRow>
+              );
+            })}
           </TableBody>
         </Table>
         {bookings.length === 0 && (
