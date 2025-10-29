@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
-import { useAuth } from '@/contexts/AuthContext';
+import { apiClient } from '@/lib/api';
 import { useNavigate } from 'react-router-dom';
 import { Car, ArrowRight, Loader2 } from 'lucide-react';
 
@@ -13,51 +13,57 @@ const Auth = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [signInData, setSignInData] = useState({ email: '', password: '' });
   const [signUpData, setSignUpData] = useState({ email: '', password: '', fullName: '' });
-  const { signIn, signUp, user } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
 
   // Redirect if already authenticated
   useEffect(() => {
-    if (user) {
+    const token = localStorage.getItem('auth_token') || sessionStorage.getItem('auth_token');
+    if (token) {
       navigate('/');
     }
-  }, [user, navigate]);
+  }, [navigate]);
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    
+
     try {
-      const { error } = await signIn(signInData.email, signInData.password);
-      
-      if (error) {
-        if (error.message.includes('Invalid login credentials')) {
-          toast({
-            title: 'Sign In Failed',
-            description: 'Invalid email or password. Please try again.',
-            variant: 'destructive',
-          });
-        } else {
-          toast({
-            title: 'Sign In Failed',
-            description: error.message,
-            variant: 'destructive',
-          });
-        }
-      } else {
+      const response = await apiClient.auth.signIn({
+        email: signInData.email,
+        password: signInData.password,
+      });
+
+      const token = response.data.data?.token || response.data.token;
+      if (token) {
+        localStorage.setItem('auth_token', token);
         toast({
           title: 'Welcome back!',
           description: 'You have successfully signed in.',
         });
         navigate('/');
+      } else {
+        toast({
+          title: 'Sign In Failed',
+          description: 'Invalid response from server.',
+          variant: 'destructive',
+        });
       }
-    } catch (error) {
-      toast({
-        title: 'Sign In Failed',
-        description: 'An unexpected error occurred. Please try again.',
-        variant: 'destructive',
-      });
+    } catch (error: any) {
+      const errorMessage = error.response?.data?.message || error.message || 'An unexpected error occurred. Please try again.';
+      if (errorMessage.includes('Invalid login credentials')) {
+        toast({
+          title: 'Sign In Failed',
+          description: 'Invalid email or password. Please try again.',
+          variant: 'destructive',
+        });
+      } else {
+        toast({
+          title: 'Sign In Failed',
+          description: errorMessage,
+          variant: 'destructive',
+        });
+      }
     } finally {
       setIsLoading(false);
     }
@@ -66,44 +72,45 @@ const Auth = () => {
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    
+
     try {
-      const { error } = await signUp(signUpData.email, signUpData.password, signUpData.fullName);
-      
-      if (error) {
-        if (error.message.includes('User already registered')) {
-          toast({
-            title: 'Sign Up Failed',
-            description: 'An account with this email already exists. Please sign in instead.',
-            variant: 'destructive',
-          });
-        } else if (error.message.includes('Password should be at least 6 characters')) {
-          toast({
-            title: 'Sign Up Failed',
-            description: 'Password should be at least 6 characters long.',
-            variant: 'destructive',
-          });
-        } else {
-          toast({
-            title: 'Sign Up Failed',
-            description: error.message,
-            variant: 'destructive',
-          });
-        }
+      const response = await apiClient.auth.signUp({
+        email: signUpData.email,
+        password: signUpData.password,
+        fullName: signUpData.fullName,
+      });
+
+      const token = response.data.data?.token || response.data.token;
+      if (token) {
+        localStorage.setItem('auth_token', token);
+      }
+
+      toast({
+        title: 'Account Created!',
+        description: 'Please check your email to verify your account.',
+      });
+      setSignUpData({ email: '', password: '', fullName: '' });
+    } catch (error: any) {
+      const errorMessage = error.response?.data?.message || error.message || 'An unexpected error occurred. Please try again.';
+      if (errorMessage.includes('User already registered')) {
+        toast({
+          title: 'Sign Up Failed',
+          description: 'An account with this email already exists. Please sign in instead.',
+          variant: 'destructive',
+        });
+      } else if (errorMessage.includes('Password should be at least 6 characters')) {
+        toast({
+          title: 'Sign Up Failed',
+          description: 'Password should be at least 6 characters long.',
+          variant: 'destructive',
+        });
       } else {
         toast({
-          title: 'Account Created!',
-          description: 'Please check your email to verify your account.',
+          title: 'Sign Up Failed',
+          description: errorMessage,
+          variant: 'destructive',
         });
-        // Clear form
-        setSignUpData({ email: '', password: '', fullName: '' });
       }
-    } catch (error) {
-      toast({
-        title: 'Sign Up Failed',
-        description: 'An unexpected error occurred. Please try again.',
-        variant: 'destructive',
-      });
     } finally {
       setIsLoading(false);
     }
@@ -134,7 +141,7 @@ const Auth = () => {
                 <TabsTrigger value="signin">Sign In</TabsTrigger>
                 <TabsTrigger value="signup">Sign Up</TabsTrigger>
               </TabsList>
-              
+
               <TabsContent value="signin" className="space-y-4 mt-6">
                 <form onSubmit={handleSignIn} className="space-y-4">
                   <div className="space-y-2">
@@ -171,7 +178,7 @@ const Auth = () => {
                   </Button>
                 </form>
               </TabsContent>
-              
+
               <TabsContent value="signup" className="space-y-4 mt-6">
                 <form onSubmit={handleSignUp} className="space-y-4">
                   <div className="space-y-2">

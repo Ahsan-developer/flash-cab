@@ -1,30 +1,40 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Phone, MapPin, Clock, LogOut, User } from "lucide-react";
+import { Menu, Phone, MapPin, Clock, LogOut } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useAuth } from "@/contexts/AuthContext";
 import { useToast } from "@/hooks/use-toast";
+import { apiClient } from "@/lib/api";
 import logoTransparent from "@/assets/logo-transparent.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { user, signOut, isAdmin } = useAuth();
   const { toast } = useToast();
 
+  const token = sessionStorage.getItem('auth_token') || localStorage.getItem('auth_token');
+  const userEmail = token ? (localStorage.getItem('user_data') ? JSON.parse(localStorage.getItem('user_data') || '{}').email : null) : null;
+  const isAdmin = !!sessionStorage.getItem('auth_token');
+
   const handleSignOut = async () => {
-    const { error } = await signOut();
-    if (error) {
-      toast({
-        title: "Error",
-        description: "Failed to sign out. Please try again.",
-        variant: "destructive",
-      });
-    } else {
+    try {
+      await apiClient.auth.signOut();
+      sessionStorage.removeItem('auth_token');
+      localStorage.removeItem('auth_token');
+      localStorage.removeItem('user_data');
       toast({
         title: "Signed out",
         description: "You have been signed out successfully.",
       });
+      window.location.href = '/';
+    } catch (error) {
+      sessionStorage.removeItem('auth_token');
+      localStorage.removeItem('auth_token');
+      localStorage.removeItem('user_data');
+      toast({
+        title: "Signed out",
+        description: "You have been signed out successfully.",
+      });
+      window.location.href = '/';
     }
   };
 
@@ -107,18 +117,20 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-3">
-            {user ? (
+            {token ? (
               <div className="flex items-center gap-3">
-                <span className="text-sm text-muted-foreground">
-                  Welcome, {user.email}
-                </span>
+                {userEmail && (
+                  <span className="text-sm text-muted-foreground">
+                    Welcome, {userEmail}
+                  </span>
+                )}
                 <Button variant="outline" size="sm" onClick={handleSignOut}>
                   <LogOut className="h-4 w-4 mr-2" />
                   Sign Out
                 </Button>
               </div>
             ) : (
-              <Button 
+              <Button
                 className="btn-primary px-6 py-2 rounded-full"
                 onClick={handleBookNowClick}
               >
@@ -157,14 +169,16 @@ const Header = () => {
                     </a>
                   )
                 ))}
-                
-                {user ? (
+
+                {token ? (
                   <div className="mt-6 space-y-4 pt-4 border-t">
-                    <div className="text-sm text-muted-foreground">
-                      {user.email}
-                    </div>
-                    <Button 
-                      variant="outline" 
+                    {userEmail && (
+                      <div className="text-sm text-muted-foreground">
+                        {userEmail}
+                      </div>
+                    )}
+                    <Button
+                      variant="outline"
                       className="w-full"
                       onClick={() => {
                         handleSignOut();
@@ -177,7 +191,7 @@ const Header = () => {
                   </div>
                 ) : (
                   <div className="mt-6 space-y-3 pt-4 border-t">
-                    <Button 
+                    <Button
                       className="btn-primary w-full rounded-full"
                       onClick={() => {
                         handleBookNowClick();

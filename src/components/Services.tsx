@@ -10,7 +10,7 @@ const Services = () => {
       title: "City Rides",
       description: "Quick and comfortable rides around the city",
       features: ["4 Passengers", "AC Available", "GPS Tracking"],
-      price: "Starting from $8",
+      price: "Starting from €8",
       popular: false
     },
     {
@@ -18,7 +18,7 @@ const Services = () => {
       title: "Premium",
       description: "Luxury vehicles for special occasions",
       features: ["Premium Comfort", "Professional Driver", "VIP Service"],
-      price: "Starting from $25",
+      price: "Starting from €25",
       popular: true
     },
     {
@@ -26,7 +26,7 @@ const Services = () => {
       title: "Group Rides",
       description: "Perfect for group travel and events",
       features: ["Up to 8 Passengers", "Extra Space", "Group Discounts"],
-      price: "Starting from $15",
+      price: "Starting from €15",
       popular: false
     },
     {
@@ -34,7 +34,7 @@ const Services = () => {
       title: "Cargo Service",
       description: "Moving packages and small deliveries",
       features: ["Secure Transport", "Real-time Tracking", "Insurance Covered"],
-      price: "Starting from $12",
+      price: "Starting from €12",
       popular: false
     }
   ];

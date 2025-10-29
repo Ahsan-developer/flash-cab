@@ -1,9 +1,7 @@
-import { useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { BarChart3, Car, FileText, DollarSign, TrendingUp, Users } from "lucide-react";
+import { BarChart3, Car, FileText} from "lucide-react";
 import BookingsTable from "@/components/admin/BookingsTable";
 import InvoicesTable from "@/components/admin/InvoicesTable";
 import AnalyticsCards from "@/components/admin/AnalyticsCards";
